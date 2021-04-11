@@ -14,6 +14,7 @@ def main():
         print("ingrese las opciones:", opt)
     number1 = 0
     number2 = 0
+    operator = ""
 
     for(op,arg) in (opt):
         if op == "-n":
@@ -24,13 +25,15 @@ def main():
             number2 = int(arg)
         elif op == "-o":
             print("Operation: ", str(arg))
+            operator = arg
 
     for(op,arg) in opt:
         if op == "-n":
             try:
                 number1 = int(arg)
+                number2 = int(arg)
             except ValueError:
-                print("The number 1 entered isn't an integer, ")
+                print("The numbers entered isn't integers, ")
                 print("Number: ", arg)
                 exit()
         if op == "-o":
